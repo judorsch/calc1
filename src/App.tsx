@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { CalcButton } from './components/CalcButton';
 import './App.css';
+import {Entry} from './components/Entry';
+import {OpEntry} from './components/OpEntry';
 
-function App() {
+function App():JSX.Element {
+  const [answer, setAnswer] = useState<string>("");
+  const [op, setOp] = useState<string>("");
+  const [num1, setNum1] = useState<number>(0);
+  const [num2, setNum2] = useState<number>(0);
+  console.log(num1);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Calculator App</h1>
+      <p>Input a number, an operation, and then another number.  The supported operations are +, -, *, /, ^, and %.</p>
+      <div id="calculate">
+        <p>Happy Calculating!</p>
+        <Entry setNum={setNum1}></Entry>
+        <OpEntry setOp={setOp} op={op}></OpEntry>
+        <Entry setNum={setNum2}></Entry>
+        <p> = {answer}</p>
+      </div>
+      <CalcButton change={setAnswer} op={op} num1 = {num1} num2={num2}></CalcButton>      
     </div>
+
   );
 }
 
