@@ -15,7 +15,7 @@ function App():JSX.Element {
   return (
     <div className="App">
       <h1>Calculator App</h1>
-      <p>Input a number, an operation, and then another number.  The supported operations are +, -, *, /, ^, and %. Enter all fractions as decimals.</p>
+      <p>Input a number, an operation, and then another number.  The supported operations are +, -, *(multiply), /, ^, and % (mod). Enter all fractions as decimals.</p>
       <div id="calculate">
         <p>Happy Calculating!</p>
         <OpEntry id ={"num"} setOp={setNum1} op ={num1}></OpEntry>
