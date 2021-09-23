@@ -1,8 +1,13 @@
-interface entry{
-  setNum:(num:number) =>void,
-  num:number,
+interface props{
+    setAns:(text:string) => void,
+    ans:string,
 }
-export function Entry({setNum, num}:entry): JSX.Element{
-  return(
-    <input className ="nums" value={num} type="number" onChange={e=>setNum(+e.target.value)}></input>)
+
+export const Entry = ({setAns, ans}: props): JSX.Element => {
+    return(
+        <div id ="ans">
+            <label id ="equals">=</label>
+            <input id ="answer" value={ans} type="text"></input>
+        </div>
+    )
   }

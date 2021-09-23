@@ -1,56 +1,61 @@
 interface ButtonProps{
   change: (text:string) =>void,
   op:string,
-  num1:number,
-  num2:number,
+  num1:string,
+  num2:string,
 }
 
 export const CalcButton = ({change, op, num1, num2}: ButtonProps): JSX.Element => {
   const operations = ["+", "-", "*", "/", "^", "%"];
-  function calculate(){
+  function calculate(numA:number, numB:number){
     if(op === "+"){
-      change(""+(num1 + num2))
+      change(JSON.stringify(numA + numB))
     }
     else if(op === "-"){
-      change(""+(num1 - num2))
+      change(JSON.stringify(numA - numB))
     }
     else if(op === "*"){
-      change(""+(num1 * num2))
+      change(JSON.stringify(numA * numB))
     }
     else if(op === "/"){
-      if(num2 === 0){
+      const result = JSON.stringify(numA / numB);
+      if(result === 'null'){
         change("Invalid Input")
       }
       else{
-        change(""+(num1 / num2))
+        change(result)
       }
     }
     else if(op === "^"){
-      if(num1 <= 0){
+      const result = JSON.stringify(numA ** numB);
+      if(result === 'null'){
         change("Invalid Input")
       }
       else{
-        change(""+(num1 ^ num2))
+        change(result)
       }
     }
     else{
-      if(num2 === 0){
+      const result = JSON.stringify(numA % numB);
+      if(result === 'null'){
         change("Invalid Input")
       }
       else{
-        change(""+(num1 % num2))
+        change(result)
       }
     }
 
   }
   const calc = () =>  {
-    if(operations.includes(op)){
-      calculate();      
+    const numA = parseFloat(num1);
+    const numB = parseFloat(num2);
+    if(operations.includes(op) && (!isNaN(numA)) && (!isNaN(numB))){
+      calculate(numA, numB);      
     }
     else{
       change("Invalid Input")
     }
   }
 
-  return <button className = "space" onClick={() => calc()}>Calculate!</button>
+  return <button id = "space" onClick={() => calc()}>Calculate!</button>
 }

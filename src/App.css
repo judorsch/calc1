@@ -37,7 +37,8 @@
   }
 }
 
-.space{
+#space{
+  margin-top: 1em;
   display: table-cell;
   vertical-align: middle;
   background-color:rgb(163, 3, 3);
@@ -60,15 +61,7 @@ p{
 #calculate{
   white-space: nowrap;
 }
-.nums{
-  border: 1px solid rgb(163, 3, 3);
-  height:50px;
-  font-size:50px;
-  width:100px;
-  color:rgb(163, 3, 3);
-  display: inline-block;
-  background-color: yellow;
-}
+
 #op{
   border: 1px solid rgb(163, 3, 3);
   height:50px;
@@ -78,7 +71,34 @@ p{
   display: inline-block;
   background-color: yellow;
 }
-#ans{
+
+#num{
+  border: 1px solid rgb(163, 3, 3);
+  height:50px;
   font-size:50px;
+  width:100px;
+  color:rgb(163, 3, 3);
+  display: inline-block;
+  background-color: yellow;
+}
+
+#answer{
+  border: none;
+  height:50px;
+  font-size:50px;
+  width:300px;
+  color:rgb(163, 3, 3);
+  display: inline-block;
+  background-color: yellow;
+}
+#equals{
+  display: inline-block;
+  border: none;
+  height:50px;
+  font-size:50px;
+  color:rgb(163, 3, 3);
+  background-color: yellow;
+}
+#ans{
   display: inline-block;
 }
