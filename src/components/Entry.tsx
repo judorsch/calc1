@@ -4,5 +4,5 @@ interface entry{
 }
 export function Entry({setNum, num}:entry): JSX.Element{
   return(
-    <input value={num} type="number" onChange={e=>setNum(+e.target.value)}></input>)
+    <input className ="nums" value={num} type="number" onChange={e=>setNum(+e.target.value)}></input>)
   }

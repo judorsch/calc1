@@ -21,7 +21,7 @@ function App():JSX.Element {
         <Entry setNum={setNum1} num ={num1}></Entry>
         <OpEntry setOp={setOp} op={op}></OpEntry>
         <Entry setNum={setNum2} num = {num2}></Entry>
-        <p> = {answer}</p>
+        <p id = "ans"> = {answer}</p>
       </div>
       <CalcButton change={setAnswer} op={op} num1 = {num1} num2={num2}></CalcButton>      
     </div>
