@@ -3,10 +3,8 @@ interface opEntry{
     op:string
 }
 
-export const OpEntry = ({setOp, op}: opEntry): JSX.Element => {
-    const update = ()=>{
-        setOp(op);
-    }
 
-    return <input id= "op" onChange = {()=>update()} ></input>
+export const OpEntry = ({setOp, op}: opEntry): JSX.Element => {
+    return(
+        <input value={op} type="number" onChange={e=>setOp(e.target.value)}></input>)
   }

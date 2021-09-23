@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-
 interface entry{
   setNum:(num:number) =>void,
+  num:number,
 }
-export const Entry = ({setNum}:entry): JSX.Element => {
-  const update = ()=>{
-}
-
-return <input type="number" id= "num" onChange = {()=>update()} ></input>
+export function Entry({setNum, num}:entry): JSX.Element{
+  return(
+    <input value={num} type="number" onChange={e=>setNum(+e.target.value)}></input>)
   }
