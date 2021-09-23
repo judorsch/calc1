@@ -52,5 +52,5 @@ export const CalcButton = ({change, op, num1, num2}: ButtonProps): JSX.Element =
     }
   }
 
-  return <button className = "space" onClick={() => calc()}>Calculate</button>
+  return <button className = "space" onClick={() => calc()}>Calculate!</button>
 }
